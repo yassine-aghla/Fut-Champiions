@@ -1,0 +1,159 @@
+/*title et backrond-img*/
+.backgrond-sign-in{
+
+    background-image:url(img_sign_in.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    border-radius: 89px;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+   
+    
+}
+
+.title-sign-in {
+      
+      color: white;
+      
+      width: 100%;
+    height: 100%%;
+      display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+
+
+
+}
+
+.title-sign-in h1{
+    
+    text-align: center;
+    font-size: 4rem;
+
+  
+}
+ 
+.title-sign-in p{
+    
+    text-align: center;
+    font-size: 2rem;
+    margin: 15%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*formulaire sign up*/
+
+.container-Sign-in{
+    
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+/*"Media Query" responsive mobile de page sign in*/
+@media (max-width: 768px) {
+    .container-Sign-in {
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .backgrond-sign-in{ 
+        width: 100%; 
+        max-width: 400px; 
+    }
+    .box-sign-in{
+        width: 100%; 
+        max-width: 400px; 
+    }
+}
+
+.box-sign-in{
+
+    padding: 30px 120px;
+    width: 50%;
+    text-align: center;
+    border-radius: 10px;
+    
+
+}
+.box-sign-in h2{
+   
+}
+.box-sign-in button img{
+    width: 18px;
+    margin-right: 10px;
+
+}
+.box-sign-in button {
+    width: 100%;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+    border-radius: 30px;
+    background: transparent;
+    border:1px solid #999;
+    cursor: pointer;
+}
+.box-sign-in hr{
+    border:0 ;
+    height: 1px;
+    background: #c2c2c2;
+    margin:5px; 
+}
+.box-sign-in span{
+    display: block;
+    width: 40px;
+    margin: auto;
+    background: #fff;
+    font-size: 14px;
+    margin-top: -16px;
+}
+
+
+.formulaire-sign label{
+    display: block;
+    text-align: left;
+}
+.formulaire-sign input{
+    width: 100%;
+    padding: 12px 0px;
+    margin:12px 0;
+    border-radius:8px;
+    background: transparent;
+    border:1px solid #999;
+   
+}
+.formulaire-sign input[type=submit]{
+    background-color: #33B8FF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.formulaire-sign p{
+    display: block;
+    text-align: left;
+    text-decoration:none;
+}
+.formulaire-sign p a{
+    color: black;
+    cursor: pointer;
+}

@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .html {
+    font-size: 10px;
+  }
+  body {
+    width: 100%;
+  }
+  
+  /* start css properties for opportunities section */
+       
+    
+  .oppurtunities {
+    width: 80%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .titre {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    width: 15%;
+  }
+  .row-triangles {
+    width: 70rem;
+    display: flex;
+  }
+  .triangle1 {
+    border: solid black 0.5m;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /*The clip-path property lets you clip an element to a specific shape*/
+    background-color: #33b8ff;
+    width: 10rem;
+    height: 8rem;
+    margin: 1.5rem 0rem 1.5rem 3rem;
+  }
+  .triangle1 h2 {
+    box-sizing: border-box;
+    padding: 5rem 0 0 2.3rem;
+    color: white;
+  }
+  .triangle2 {
+    border: solid black 0.5m;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: #33b8ff;
+    width: 10rem;
+    height: 8rem;
+    margin: 1.5rem;
+  }
+  .triangle2 h2 {
+    box-sizing: border-box;
+    padding: 4rem 0 0 3rem;
+    color: white;
+  }
+  
+  .triangle3 {
+    border: solid black 0.5m;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: #33b8ff;
+    width: 10rem;
+    height: 8rem;
+    margin: 1.5rem;
+  }
+  .triangle3 h2 {
+    box-sizing: border-box;
+    padding: 4rem 0rem 0rem 3rem;
+    color: white;
+  }
+  
+  .triangle4 {
+    border: solid black 0.5m;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: #860d9e;
+    width: 10rem;
+    height: 8rem;
+    margin: -11rem 0rem 0rem 9rem;
+    transform: rotate(180deg);
+  }
+  .triangle4 h2 {
+    box-sizing: border-box;
+    padding: 2rem 0rem 5.5rem 1.6rem;
+    transform: rotate(180deg);
+    color: white;
+  }
+  
+  .triangle5 {
+    border: solid black 0.5m;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: #860d9e;
+    width: 10rem;
+    height: 8rem;
+    margin: -11rem 0rem 0rem 2rem;
+    transform: rotate(180deg);
+  }
+  .triangle5 h2 {
+    box-sizing: border-box;
+    padding: 2rem 0rem 5.6rem 1.3rem;
+    transform: rotate(180deg);
+    color: white;
+  }
+  
+  .triangle6 {
+    border: solid black 0.5m;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: #860d9e;
+    width: 10rem;
+    height: 8rem;
+    margin: -11rem 0rem 0rem 2rem;
+    transform: rotate(180deg);
+  }
+  
+  .triangle6 h2 {
+    box-sizing: border-box;
+    padding: 2rem 0rem 5.5rem 2.3rem;
+    transform: rotate(180deg);
+    color: white;
+  }
+    /* commencer le css de les avis  */
+    .avis_y{
+      margin-bottom: 40px;
+      margin-top: 40px;
+    }
+    .client-avis_y {
+      border: 1px solid #ccc;
+      padding: 15px;
+      border-radius: 5px;
+      width: 250px;
+      text-align: center;
+      margin-bottom: 20px;
+  }
+  
+  .star-rating {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+  }
+  
+  .stars {
+      display: flex;
+  }
+  
+  .stars span {
+      font-size: 24px;
+      margin: 0 2px;
+  }
+  
+  .filled {
+      color: gold;
+  }
+  
+  .empty {
+      color: #ccc;
+  }
+  .avis_client_y{
+      display: grid;
+      grid-template-columns: repeat(3,auto);
+      justify-content: center;
+      gap: 10px;
+  }
+  .avis_titre-y{
+     justify-items: center;
+     margin-bottom: 30px;
+    
+  }
+ 
+   /* termine le css des avis */
+  /* media query pour les tablettes */
+  
+  @media (max-width: 1023px) {
+    
+     
+
+    .titre {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 3rem;
+      background-color: white;
+    }
+    .oppurtunities {
+      width: 80%;
+      height: 80%;
+      margin-left: auto;
+      margin-right:auto;
+      
+    }
+    .row-triangles {
+      width:100%;
+      display: grid;
+      justify-content: center;
+      
+    }
+    .triangle1 {
+    border: solid black 0.5m;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: #33b8ff;
+    width: 10rem;
+    height: 8rem;
+    margin: 1.5rem 0rem 1rem 0rem;
+  }
+  .triangle2 {
+    border: solid black 0.5m;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: #33b8ff;
+    width: 10rem;
+    height: 8rem;
+    margin: 1.5rem 0rem 1.5rem 0rem;
+  }
+  .triangle3 {
+    border: solid black 0.5m;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: #33b8ff;
+    width: 10rem;
+    height: 8rem;
+    margin: 1.5rem 0rem 1.5rem 0rem;
+  }
+    .triangle4 {
+      border: solid black 0.5m;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      background-color: #860d9e;
+      width: 10rem;
+      height: 8rem;
+      margin: -31.2rem 0rem 0rem 15rem;
+      transform: rotate(180deg);
+    }
+    .triangle5 {
+      border: solid black 0.5m;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      background-color: #860d9e;
+      width: 10rem;
+      height: 8rem;
+      margin: -20.5rem 0rem 0rem 15rem;
+      transform: rotate(180deg);
+    }
+    .triangle6 {
+      border: solid black 0.5m;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      background-color: #860d9e;
+      width: 10rem;
+      height: 8rem;
+      margin: -9.5rem 0rem 0rem 15rem;
+      transform: rotate(180deg);
+    }
+         /*  MEDIA QUERY DE TABLETTE AVIS */
+    .avis_client_y{
+      display: grid;
+      grid-template-columns: repeat(2,auto);
+      justify-content: center;
+      gap: 10px;
+  }
+  .avis_titre-y h1{
+   font-size: 20px;
+   font-weight: 600;
+  }
+  .avis_titre-y p{
+    font-size: 20px;
+  }
+ .client-avis_y h3{
+  font-size: 20px;
+ }
+ .client-avis_y p{
+ font-size: 15px;
+ 
+ }
+  }
+  
+  /* media query pour le mobile */
+  
+  @media (max-width: 767px){
+
+    .titre {
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 3rem;
+    }
+    .oppurtunities {
+      width: 80%;
+      height: 80%;
+      margin-left: auto;
+      margin-right:auto;
+      
+      
+    }
+    .row-triangles {
+      width:100%;
+      display:inline-grid;
+      gap:11rem
+      
+    }
+    .triangle1 {
+    border: solid black 0.5m;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: #33b8ff;
+    width: 10rem;
+    height: 8rem;
+    margin: 1.5rem 0rem 1rem 0rem;
+  }
+  .triangle2 {
+    border: solid black 0.5m;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: #33b8ff;
+    width: 10rem;
+    height: 8rem;
+    margin: 1.5rem 0rem 1.5rem 0rem;
+  }
+  .triangle3 {
+    border: solid black 0.5m;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    background-color: #33b8ff;
+    width: 10rem;
+    height: 8rem;
+    margin: 1.5rem 0rem 1.5rem 0rem;
+  }
+    .triangle4 {
+      border: solid black 0.5m;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      background-color: #860d9e;
+      width: 10rem;
+      height: 8rem;
+      margin: 0rem 7.4rem 0rem 7.6rem;
+      transform: rotate(180deg);
+    }
+    .triangle5 {
+      border: solid black 0.5m;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      background-color: #860d9e;
+      width: 10rem;
+      height: 8rem;
+      margin: -62.6rem 0rem 0rem 7.6rem;
+      transform: rotate(180deg);
+    }
+    .triangle6 {
+      border: solid black 0.5m;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      background-color: #860d9e;
+      width: 10rem;
+      height: 8rem;
+      margin: -52.3rem 0rem 0rem 7.6rem;
+      transform: rotate(180deg);
+    }
+         /* MEDIA QUERY TELEPHONE AVIS  */
+    .avis_y{
+      margin-top: -100px;
+    }
+    .avis_client_y{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+  }
+}
+
+  /* opportunities section ended! */
+    
+
+
+  
+   
