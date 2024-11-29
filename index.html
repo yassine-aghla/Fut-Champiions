@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="style.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
     <title>Player Form</title>
   </head>
@@ -553,14 +554,16 @@
           <div class="form-group">
             <label for="name">Nom</label>
             <input type="text" id="name-gardien" name="name" />
+            
           </div>
+
           <div class="form-group">
             <label for="photo">Photo</label>
             <input
-              type="file"
+              type="url"
               id="photo_gardien"
               name="photo"
-              accept="image/*"
+              
             />
           </div>
           <div class="form-group">
@@ -573,13 +576,14 @@
               disabled
             />
           </div>
+          
           <div class="form-group">
             <label for="nationality">Nationalité</label>
             <input type="text" id="nationality_gardien" name="nationality" />
           </div>
           <div class="form-group">
             <label for="photo">drapeau</label>
-            <input type="file" id="photo" name="photo" accept="image/*" />
+            <input type="url" id="photo_drapeau" name="photo"  />
           </div>
           <!-- <div class="form-group">
                           <label for="club">Club</label>
@@ -587,7 +591,7 @@
                       </div> -->
           <div class="form-group">
             <label for="photo">logo</label>
-            <input type="file" id="photo" name="photo" accept="image/*" />
+            <input type="url" id="photo_logo" name="photo"  />
           </div>
           <div class="form-group">
             <label for="rating">rating</label>
@@ -646,10 +650,12 @@
               placeholder="Enter player name"
               required
             />
+            <span id="name-error"></span>
           </div>
           <div class="form-group">
             <label for="photo">Photo</label>
-            <input type="file" id="photo" name="photo" accept="image/*" />
+            <input type="url" id="photo" name="photo"  />
+            <span id="photo-error"></span>
           </div>
           <div class="form-group">
             <label for="position">Position</label>
@@ -674,6 +680,18 @@
               name="nationality"
               placeholder="Enter nationality"
             />
+            <span id="natinality-error" ></span>
+          </div>
+          <div class="form-group">
+            <label for="photo">drapeau</label>
+            <input type="url" id="joueur_drapeau" name="photo"  />
+            <span id="drapeau-error" ></span>
+          </div>
+        
+          <div class="form-group">
+            <label for="photo">logo</label>
+            <input type="url" id="joueur_logo" name="photo"  />
+            <span id="logo-error" ></span>
           </div>
           <div class="form-group">
             <label for="club">Club</label>
@@ -683,7 +701,9 @@
               name="club"
               placeholder="Enter club name"
             />
+            <span id="club-error" ></span>
           </div>
+
           <div class="form-group">
             <label for="rating">Rating</label>
             <input
@@ -694,7 +714,9 @@
               min="0"
               max="100"
             />
+            <span id="rating-error" ></span>
           </div>
+
           <div class="avis">
             <div class="form-group">
               <label for="pace">Pace</label>
@@ -706,6 +728,7 @@
                 min="0"
                 max="100"
               />
+              <span id="pace-error" ></span>
             </div>
             <div class="form-group">
               <label for="shooting">Shooting</label>
@@ -717,6 +740,7 @@
                 min="0"
                 max="100"
               />
+              <span id="shooting-error" ></span>
             </div>
           </div>
           <div class="avis">
@@ -730,6 +754,7 @@
                 min="0"
                 max="100"
               />
+              <span id="passing-error" ></span>
             </div>
             <div class="form-group">
               <label for="dribbling">Dribbling</label>
@@ -741,6 +766,7 @@
                 min="0"
                 max="100"
               />
+              <span id="dribbling-error" ></span>
             </div>
           </div>
           <div class="avis">
@@ -754,6 +780,7 @@
                 min="0"
                 max="100"
               />
+              <span id="defending-error" ></span>
             </div>
             <div class="form-group">
               <label for="physical">Physical</label>
@@ -765,6 +792,7 @@
                 min="0"
                 max="100"
               /><br />
+              <span id="physical-error" ></span>
             </div>
           </div>
           <div>
@@ -784,7 +812,97 @@
         <h3>Les Remplacements</h3>
       </div>
       <div class="changement">
-        <div class="gardien_changment">
+        <!-- <div class="gardien_changment">
+          <div class="info">
+            <div class="raiting">
+              <p>95</p>
+              <p>++</p>
+            </div>
+            <div class="profil">
+              <img src="immmg.png" />
+            </div>
+          </div>
+
+          <div class="name_joueur">
+            <h4>yassine</h4>
+          </div>
+          <div class="statistique">
+            <div class="pac">
+              <p><strong>pac</strong></p>
+              <p>98</p>
+            </div>
+            <div class="sho">
+              <p><strong>sho</strong></p>
+              <p>98</p>
+            </div>
+            <div class="pas">
+              <p><strong>pas</strong></p>
+              <p>98</p>
+            </div>
+            <div class="dri">
+              <p><strong>dri</strong></p>
+              <p>98</p>
+            </div>
+            <div class="def">
+              <p><strong>def</strong></p>
+              <p>98</p>
+            </div>
+            <div class="phy">
+              <p><strong>phy</strong></p>
+              <p>98</p>
+            </div>
+          </div>
+          <div class="flags">
+            <img src="city.jfif" />
+            <img src="maroc.png" />
+          </div>
+        </div> -->
+        <!-- <div class="gardien_changment">
+          <div class="info">
+            <div class="raiting">
+              <p>95</p>
+              <p>++</p>
+            </div>
+            <div class="profil">
+              <img src="immmg.png" />
+            </div>
+          </div>
+
+          <div class="name_joueur">
+            <h4>yassine</h4>
+          </div>
+          <div class="statistique">
+            <div class="pac">
+              <p><strong>pac</strong></p>
+              <p>98</p>
+            </div>
+            <div class="sho">
+              <p><strong>sho</strong></p>
+              <p>98</p>
+            </div>
+            <div class="pas">
+              <p><strong>pas</strong></p>
+              <p>98</p>
+            </div>
+            <div class="dri">
+              <p><strong>dri</strong></p>
+              <p>98</p>
+            </div>
+            <div class="def">
+              <p><strong>def</strong></p>
+              <p>98</p>
+            </div>
+            <div class="phy">
+              <p><strong>phy</strong></p>
+              <p>98</p>
+            </div>
+          </div>
+          <div class="flags">
+            <img src="city.jfif" />
+            <img src="maroc.png" />
+          </div>
+        </div> -->
+        <!-- <div class="gardien_changment">
           <div class="info">
             <div class="raiting">
               <p>95</p>
@@ -1098,8 +1216,8 @@
             <img src="city.jfif" />
             <img src="maroc.png" />
           </div>
-        </div>
-        <div class="gardien_changment">
+        </div> -->
+        <!-- <div class="gardien_changment">
           <div class="info">
             <div class="raiting">
               <p>95</p>
@@ -1278,103 +1396,13 @@
             <img src="city.jfif" />
             <img src="maroc.png" />
           </div>
-        </div>
-        <div class="gardien_changment">
-          <div class="info">
-            <div class="raiting">
-              <p>95</p>
-              <p>++</p>
-            </div>
-            <div class="profil">
-              <img src="immmg.png" />
-            </div>
-          </div>
-
-          <div class="name_joueur">
-            <h4>yassine</h4>
-          </div>
-          <div class="statistique">
-            <div class="pac">
-              <p><strong>pac</strong></p>
-              <p>98</p>
-            </div>
-            <div class="sho">
-              <p><strong>sho</strong></p>
-              <p>98</p>
-            </div>
-            <div class="pas">
-              <p><strong>pas</strong></p>
-              <p>98</p>
-            </div>
-            <div class="dri">
-              <p><strong>dri</strong></p>
-              <p>98</p>
-            </div>
-            <div class="def">
-              <p><strong>def</strong></p>
-              <p>98</p>
-            </div>
-            <div class="phy">
-              <p><strong>phy</strong></p>
-              <p>98</p>
-            </div>
-          </div>
-          <div class="flags">
-            <img src="city.jfif" />
-            <img src="maroc.png" />
-          </div>
-        </div>
-        <div class="gardien_changment">
-          <div class="info">
-            <div class="raiting">
-              <p>95</p>
-              <p>++</p>
-            </div>
-            <div class="profil">
-              <img src="immmg.png" />
-            </div>
-          </div>
-
-          <div class="name_joueur">
-            <h4>yassine</h4>
-          </div>
-          <div class="statistique">
-            <div class="pac">
-              <p><strong>pac</strong></p>
-              <p>98</p>
-            </div>
-            <div class="sho">
-              <p><strong>sho</strong></p>
-              <p>98</p>
-            </div>
-            <div class="pas">
-              <p><strong>pas</strong></p>
-              <p>98</p>
-            </div>
-            <div class="dri">
-              <p><strong>dri</strong></p>
-              <p>98</p>
-            </div>
-            <div class="def">
-              <p><strong>def</strong></p>
-              <p>98</p>
-            </div>
-            <div class="phy">
-              <p><strong>phy</strong></p>
-              <p>98</p>
-            </div>
-          </div>
-          <div class="flags">
-            <img src="city.jfif" />
-            <img src="maroc.png" />
-          </div>
-        </div>
+        </div> -->
       </div>
     </div>
-    <div id="playersList">
+    <!-- <div id="playersList">
       <h3>Liste des joueurs</h3>
       <div class="player-cards"></div>
-    </div>
+    </div> -->
 
     <script src="script.js"></script>
   </body>

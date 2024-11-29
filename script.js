@@ -1,11 +1,12 @@
-// let data=JSON.parse(localStorage.getItem("data"))||[];
+
 let data=[];
 let gardien=document.getElementById("gardien")
 let profil=document.getElementById("profil")
+const changement= document.querySelector(".changement")
 document.getElementById("addkepperBtn").addEventListener('click', function () {
     // Récupérer les données du formulaire
     const name_gardien = document.getElementById('name-gardien').value;
-    const photo_gardien = document.getElementById('photo_gardien');
+    const photo_gardien = document.getElementById('photo_gardien').value;
     const position_gardien = document.getElementById('position_gardien').value;
     const nationality_gardien = document.getElementById('nationality_gardien').value;
     const club_gardien = document.getElementById('club').value;
@@ -16,89 +17,77 @@ document.getElementById("addkepperBtn").addEventListener('click', function () {
     const reflexes = document.getElementById('reflexes').value;
     const speed = document.getElementById('speed').value;
     const positioning = document.getElementById('positioning').value;
+    const drapeau=document.getElementById("photo_drapeau").value;
+    const logo=document.getElementById("photo_logo").value;
     data.push({ name_gardien, photo_gardien, position_gardien, nationality_gardien, club_gardien ,rating_gardien ,diving,handling, kicking ,reflexes, speed,positioning });
     
-    
-    
-    // if (!name) {
-    //   alert('Veuillez entrer un nom de joueur !');
-    //   return;
-    // }
-
-     const gardienCard = document.createElement('div');
- 
-    // if (photo_gardien) {
-    //   const reader = new FileReader();
-    //   reader.onload = function (e) {
-    //     const img = document.createElement('img');
-    //     img.src = e.target.result;
-    //     img.alt = `${name_gardien}'s photo`;
-    //     img.classList.add('profil');
-       
-    //     profil.appendChild(img);
-    //   };
-    //   reader.readAsDataURL(photo_gardien);
-    // }
-  
-    data.forEach((info_gardien) => {
+      
     const gardienInfo = document.createElement('div');
-     const imageUrl = "badge_gold.webp";
-     gardien.style.backgroundImage = `url('${imageUrl}')`;
-    // playerInfo.classList.add('player-info');
+    gardienInfo.classList.add("stylle")
+  
     gardienInfo.innerHTML = `
     <div id="gardien"  class="gardien_de_but">
       <div class="info">
                 <div class="raiting">
-                 <p>${info_gardien.rating_gardien }</p>
+                 <p>${rating_gardien }</p>
                  <p>++</p>
                 </div>
                 <div id="profil" class="profil">
-                  <img src="${info_gardien.photo_gardien}">
+                  <img src="${photo_gardien}">
                 </div>
-            </div>
-    
+                 </div>
+                <button class="delete-btn" style="all: unset" style=margin ><i class="fas fa-trash"></i></button>
+                
             <div class="name_joueur">
-              <h4>${info_gardien.name_gardien}</h4>
+              <h4>${name_gardien}</h4>
             </div>
             <div class="statistique">
               <div class="div">
                 <p><strong>div</strong></p>
-                <p>${info_gardien.diving}</p>
+                <p>${diving}</p>
               </div>
               <div class="hand">
                 <p><strong>hand</strong></p>
-                <p>${info_gardien.handling}</p>
+                <p>${handling}</p>
               </div>
               <div class="kick">
                 <p><strong>kick</strong></p>
-                <p>${info_gardien.kicking}</p>
+                <p>${kicking}</p>
               </div>
               <div class="reflexe">
                 <p><strong>ref</strong></p>
-                <p>${info_gardien.reflexes}</p>
+                <p>${reflexes}</p>
               </div>
               <div class="speed">
                 <p><strong>spd</strong></p>
-                <p>${info_gardien.speed}</p>
+                <p>${speed}</p>
               </div>
               <div class="positionnig">
                 <p><strong>pos</strong></p>
-                <p>${info_gardien.positioning}</p>
+                <p>${positioning}</p>
               </div>
             </div>
             <div class="flags">
-              <img src= "city.jfif">
-              <img src= "maroc.png">
-          
-            </div>
+              <img src= ${logo}>
+              <img src=${drapeau}>
+              
+           </div>
+           
     `;
-    gardienCard.appendChild(gardienInfo);
-  
+    gardienInfo.querySelector('.delete-btn').addEventListener('click', function () {
+      // Supprimer du DOM
+      gardienInfo.remove();})
     
-    gardien.appendChild(gardienCard);
+    if(data.length==1){
+      gardien.appendChild(gardienInfo);
+    }
+    else{
+      changement.appendChild(gardienInfo);
+      }
+   
   
     document.getElementById('playerForm').reset();
-    })
+    
   });
 
 let popap=document.getElementById("card")
@@ -130,32 +119,10 @@ let illierGauche=document.getElementById("AIG")
 let illierDroit=document.getElementById("AID")
 let avantCenter=document.getElementById("AC")
 
-// document.getElementById('addPlayerBtn').addEventListener('click', function () {
-
-    
-    
-    // const playerCard = document.createElement('div');
-    // playerCard.classList.add('player-card');
-    // playerCard.classList.remove()
-    // if (photo) {
-    //   const reader = new FileReader();
-    //   reader.onload = function (e) {
-    //     const img = document.createElement('img');
-    //     img.src = e.target.result;
-    //     img.alt = `${name}'s photo`;
-    //     img.classList.add('profil');
-       
-    //     profil.appendChild(img);
-    //   };
-    //   reader.readAsDataURL(photo);
-    // }
-  
-  
-    
+   
                                                                          
     document.getElementById('playerForm').reset();
     
-  // });
   let dg=false;
   let dd=false;
   let ad=false;
@@ -166,16 +133,18 @@ let avantCenter=document.getElementById("AC")
   let ig=false;
   let id=false;
   let ac=false;
-const changement= document.querySelector(".gardien_changment")
+// const changement= document.querySelector(".changement")
 const addplayer= document.getElementById('addPlayerBtn');
-const imageUrl = "badge_gold.webp";
+// const imageUrl = "badge_gold.webp";
 addplayer.addEventListener("click",()=>{
   let selectOption=document.getElementById("position")
   const name = document.getElementById('name').value;
-    const photo = document.getElementById('photo').files[0];
+    const photo = document.getElementById('photo').value;
     // const position = document.getElementById('position').value;
     const nationality = document.getElementById('nationality').value;
     const club = document.getElementById('club').value;
+    const drapeauJoueur = document.getElementById('joueur_drapeau').value;
+    const logoJoueur = document.getElementById('joueur_logo').value;
     const rating = document.getElementById('rating').value;
     console.log(rating);
     const pace = document.getElementById('pace').value;
@@ -184,12 +153,10 @@ addplayer.addEventListener("click",()=>{
     const dribbling = document.getElementById('dribbling').value;
     const defending = document.getElementById('defending').value;
     const physical = document.getElementById('physical').value;
-    tab.push({ name, photo, position, nationality, club, rating ,pace,shooting,passing,dribbling,defending,physical});
-    console.log(tab);
-  // e.preventDefault();
-  // const players={ name, photo, position, nationality, club, rating ,pace,shooting,passing,dribbling,defending,physical}
+    tab.push({ name, photo, position, nationality,drapeauJoueur,logoJoueur, club, rating ,pace,shooting,passing,dribbling,defending,physical});
+   
  const joeurs= document.createElement('div')
-
+joeurs.classList.add("stylle")
  joeurs.innerHTML = `
  <div class="info">
    <div class="raiting">
@@ -199,7 +166,8 @@ addplayer.addEventListener("click",()=>{
    <div id="profil" class="profil">
      <img src="${photo}">
    </div>
- </div>
+  </div>
+  <button  class="delete" style="all: unset"><i class="fas fa-trash"></i></button>
  <div class="name_joueur">
    <h4>${name}</h4>
  </div>
@@ -230,52 +198,103 @@ addplayer.addEventListener("click",()=>{
    </div>
  </div>
  <div class="flags">
-   <img src="city.jfif">
-   <img src="maroc.png">
+   <img src=${logoJoueur}>
+   <img src=${drapeauJoueur}>
+ 
  </div>
 `;
+joeurs.querySelector('.delete').addEventListener('click', function () {
+  
+
+  joeurs.remove();})
 
 
 if (selectOption.value === "CBR"){
-  if(!dg){
+  if(!dd){
   defenceDroit.appendChild(joeurs)
-  defenceDroit.style.backgroundImage = `url('${imageUrl}')`;
-  dg= true
-}else{
+  
+  dd= true
+  }else{
   changement.appendChild(joeurs)
-}
+  
+  }
 }
 else if (selectOption.value === "CBL") {
-
+  if(!dg){
   defenceGauche.appendChild(joeurs)
-  defenceGauche.style.backgroundImage = `url('${imageUrl}')`;
-  } else if (selectOption.value  === "LB") {
+  dg= true
+  }else{
+    changement.appendChild(joeurs)
+  }
+  }
+  
+  else if (selectOption.value  === "LB") {
+    if(!ag){
     arrierGauche.appendChild(joeurs)
-    arrierGauche.style.backgroundImage = `url('${imageUrl}')`;
+    ag=true
+  }else{
+    changement.appendChild(joeurs)
+  }
   } else if (selectOption.value  === "RB") {
+    if(!ad){
     arriereDroit.appendChild(joeurs)
-    arriereDroit.style.backgroundImage = `url('${imageUrl}')`;
+    ad=true
+  }else{
+    changement.appendChild(joeurs)
+  }
   } else if (selectOption.value  === "CM1") {
+    if(!md){
     MilieuDeffensif.appendChild(joeurs)
-    MilieuDeffensif.style.backgroundImage = `url('${imageUrl}')`;
+    md=true
+    }else{
+      changement.appendChild(joeurs)
+    }
   } else if (selectOption.value  === "CM2") {
+    if(!mr){
     MilieuRelayeur.appendChild(joeurs)
-    MilieuRelayeur.style.backgroundImage = `url('${imageUrl}')`;
+    mr=true
+    }
+    else{
+      changement.appendChild(joeurs)
+    }
   } else if (selectOption.value  === "CM3") {
+    if(!mo){
     MilieuOffensif.appendChild(joeurs)
-    MilieuOffensif.style.backgroundImage = `url('${imageUrl}')`;
+   mo=true
+    }else{
+      changement.appendChild(joeurs)
+    }
   } else if (selectOption.value  === "LW") {
+    if(!ig){
     illierGauche.appendChild(joeurs)
-    illierGauche.style.backgroundImage = `url('${imageUrl}')`;
+    ig=true
+    }else{
+      changement.appendChild(joeurs)
+    }
   } else if (selectOption.value  === "RW") {
+    if(!id){
     illierDroit.appendChild(joeurs)
-    illierDroit.style.backgroundImage = `url('${imageUrl}')`;
+    id=true
+    }
+    else{
+      changement.appendChild(joeurs)
+    }
   }
     else if (selectOption.value  === "ST") {
+      if(!ac){
       avantCenter.appendChild(joeurs)
-      avantCenter.style.backgroundImage = `url('${imageUrl}')`;
+      ac=true
+      }
+      else{
+        changement.appendChild(joeurs)
+      }  
     }
 })
+
+
+
+
+
 
 
  

@@ -137,11 +137,11 @@ body {
     grid-template-columns: repeat(5,auto);
   justify-content: space-evenly;
   }
-  .changement img{
+  /* .changement img{
     
     width: 10rem;
     height: 10rem;
-  }
+  } */
   .subs h3{
     justify-self: center;
     color: gray;
@@ -217,10 +217,10 @@ gap: 10px;
   justify-self: center;
   justify-self: center;
   /* background-image: url(badge_gold.webp); */
-  background-size: cover;
+   /* background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 160px;
+  width: 160px;  */
 
  
 
@@ -232,11 +232,12 @@ gap: 10px;
   width: 60%;
   justify-self: center;
   justify-self: center;
+  
   /* background-image: url(badge_gold.webp); */
-  background-size: contain;
+  /* background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 160px;
+  width: 160px; */
  
 }
 .dcR{
@@ -245,11 +246,11 @@ gap: 10px;
   width: 60%;
   justify-self: center;
   justify-self: center;
-  /* background-image: url(badge_gold.webp); */
+  /* background-image: url(badge_gold.webp);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 160px;
+  width: 160px; */
 
 }
 .dd{
@@ -259,10 +260,10 @@ gap: 10px;
   justify-self: center;
   justify-self: center;
   /* background-image: url(badge_gold.webp); */
-  background-size: contain;
+  /* background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 160px;
+  width: 160px; */
 }
 .dg{
   grid-area:LB ;
@@ -271,10 +272,10 @@ gap: 10px;
   justify-self: center;
   justify-self: center;
   /* background-image: url(badge_gold.webp); */
-  background-size: contain;
+  /* background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 160px;
+  width: 160px; */
 }
 .mdf{
   grid-area:CM1 ;
@@ -283,10 +284,10 @@ gap: 10px;
   justify-self: center;
   justify-self: center;
   /* background-image: url(badge_gold.webp); */
-  background-size: contain;
+  /* background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 160px;
+  width: 160px; */
 }
 .mr{
   grid-area:CM2 ;
@@ -295,10 +296,10 @@ gap: 10px;
   justify-self: center;
   justify-self: center;
   /* background-image: url(badge_gold.webp); */
-  background-size: contain;
+  /* background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 160px;
+  width: 160px; */
 }
 .mo{
   grid-area:CM3 ;
@@ -307,10 +308,10 @@ gap: 10px;
   justify-self: center;
   justify-self: center;
   /* background-image: url(badge_gold.webp); */
-  background-size: contain;
+  /* background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 160px;
+  width: 160px; */
 }
 .aig{
   grid-area:RW ;
@@ -319,10 +320,10 @@ gap: 10px;
   justify-self: center;
   justify-self: center;
   /* background-image: url(badge_gold.webp); */
-  background-size: contain;
+  /* background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 160px;
+  width: 160px; */
 }
 .aid{
   grid-area:ST ;
@@ -331,10 +332,10 @@ gap: 10px;
   justify-self: center;
   justify-self: center;
   /* background-image: url(badge_gold.webp); */
-  background-size: contain;
+  /* background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 160px;
+  width: 160px; */
 }
 .ac{
   grid-area:LW ;
@@ -343,10 +344,10 @@ gap: 10px;
   justify-self: center;
   justify-self: center;
   /* background-image: url(badge_gold.webp); */
-  background-size: contain;
+  /* background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 160px;
+  width: 160px; */
 }
 
 
@@ -437,21 +438,22 @@ gap: 10px;
 
 
  .gardien_changment  {
- background-image: url(badge_gold.webp);
- background-size: cover;
+ /* background-image: url(badge_gold.webp); */
+ /* background-size: cover;
   width: 195px;
-   height: 250px; 
+   height: 250px;  */
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
 }
- .gardien_changment img{
+ /* .gardien_changment img{
  width: 100px;
  height: 100px;
  
-} 
+}  */
 
  /* .nom{
   position: absolute;
@@ -488,7 +490,9 @@ gap: 10px;
 .name_joueur h4{
   color:#2F4F4F;
   transform: translateX(10px);
- justify-self: center;
+ text-align: center;
+ font-size: 10px;
+ margin-right: 15px;
 
 }
 .info{
@@ -500,6 +504,7 @@ align-items: center;
   display: flex;
   gap: 5px;
   justify-self: center;
+  margin-right: 10px;
 }
 .statistique p{
   font-size: 8px;
@@ -523,8 +528,8 @@ align-items: center;
   gap: 5px;
 }
 .flags img{
-  height: 12px;
-  width: 40px;
+  height: 10px;
+  width: 20px;
 }
 
 .player-photo {
@@ -563,7 +568,7 @@ align-items: center;
 
 .card-description {
   font-size: 16px;
-  color: #666;
+  color: #0d0d0d;
   margin-bottom: 20px;
 }
 
@@ -580,16 +585,16 @@ align-items: center;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+ 
 }
 
 .btn-keeper {
-  background-color: #ff5722; /* Couleur vive pour le gardien */
+  background-color: seagreen; /* Couleur vive pour le gardien */
   color: white;
 }
 
 .btn-player {
-  background-color: #03a9f4; /* Couleur vive pour le joueur */
+  background-color:seagreen; /* Couleur vive pour le joueur */
   color: white;
 }
 
@@ -598,15 +603,29 @@ align-items: center;
   transform: scale(1.05);
 }
 
-.btn-keeper:hover {
-  background-color: #e64a19;
+
+
+.stylle{
+  
+  background-image: url(badge_gold.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 160px;
+
+  
 }
-
-.btn-player:hover {
-  background-color: #0288d1;
+ i{
+  
+  cursor: pointer;
+  color: red;
+  border: none;
+  
+  background-color: transparent;
+} 
+.input-invalid {
+  border: 2px solid red;
 }
-
-
 
 
 /* responsive design */
@@ -623,6 +642,7 @@ align-items: center;
  .changement{
   display: grid;
   grid-template-columns: repeat(2,1fr);
+  
  }
  .image_terrain {
   min-height: 800px;
@@ -633,10 +653,10 @@ align-items: center;
   justify-self: center;
   justify-self: center;
   /* background-image: url(badge_gold.webp); */
-  background-size: cover;
+  /* background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 160px;
+  width: 160px; */
 
  
 
@@ -649,10 +669,10 @@ align-items: center;
   justify-self: center;
   justify-self: center;
   /* background-image: url(badge_gold.webp); */
-  background-size: contain;
+  /* background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 150px;
+  width: 150px; */
  
 }
 .dcR{
@@ -662,10 +682,10 @@ align-items: center;
   justify-self: center;
   justify-self: center;
   /* background-image: url(badge_gold.webp); */
-  background-size: contain;
+  /* background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  width: 150px;
+  width: 150px; */
 
 }
 .dd{
