@@ -7,10 +7,12 @@ body {
     
    
   }
+
+
  
 .container{
-    position: relative;
-    width: 94%;
+    /* position: relative; */
+    width: 100%;
     margin: 0 auto;
     background-image: url(stadium_background.webp);
     background-repeat: no-repeat;
@@ -20,11 +22,8 @@ body {
     /* height: 100vh; */
     overflow-x:hidden ;
     /* display: flex; */
-    width: 100%;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-
-    
 }
   .form-container {
     grid-column: span 4 / span 4;
@@ -54,13 +53,14 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   /* width: 400px; */
-  padding: 20px;
+  padding: 20px ;
   overflow-y: scroll;
   height: 100vh;
   /* display: none; */
   /* top: 10%;
   right: 0%; */
   /* overflow-y: auto; */
+  overflow-x: hidden;
   /* width: 30%; */
   display: none;
 }
@@ -127,6 +127,9 @@ body {
     display: flex;
     justify-content: space-evenly;
   }
+  .avis input {
+    width: 100px; /* Réduire la largeur à 100px */
+}
 
   .changement{
     
@@ -163,7 +166,8 @@ body {
   }
 .image_terrain {
   grid-column: span 8 / span 8;
-  padding: 100px;
+  /* position: relative; */
+  /* padding: 30px; */
 /* background-color: red; */
 /* position: relative; */
  /* background-color: red; */
@@ -171,40 +175,48 @@ body {
 }
  
   .equipe {
-    /* position: absolute; */
+     /* position: absolute;  */
+    
     width: 100%;
-    height: max-content;
+    height: 48rem;
     background-image: url(terrain.svg);
     background-size: contain;
     background-repeat: no-repeat;
+    /* background-color: #00b37d; */
     background-position: center;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     /* grid-template-rows: repeat(4,auto); */
-    /* grid-template-areas: 
+    grid-template-areas:  
     ". LW LW ST ST RW RW ."
     ". CM1 CM1 CM2 CM2  CM3 CM3 ."
     "LB LB CB1 CB1 CB2 CB2 RB RB"
-    ". . . GK GK . . ."; */
-    grid-template-areas:
+     ". . . GK GK . . ."; 
+    /* grid-template-areas:
     ". LW ST RW ."
     ". CM1 CM2 CM3 ."
     "LB CB1 . CB2 RB"
     "LB CB1 GK CB2 RB"
-    ". . GK . .";
+    ". . GK . ."; */
 gap: 10px;  
 }
+
+.cards {
+  background-color: #00b37d;
+  position: absolute;
+}
+
 .equipe img {
   width: 150px;
   /* height: 100%; */
-  object-fit: contain;
+  object-fit: cover;
 }
 .gardien_de_but {
   grid-area: GK;
- 
+ height: 200px;
   justify-self: center;
   justify-self: center;
-  background-image: url(badge_gold.webp);
+  /* background-image: url(badge_gold.webp); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -216,21 +228,24 @@ gap: 10px;
 
 .dcG{
   grid-area:CB1 ;
+  height: 200px;
   width: 60%;
   justify-self: center;
   justify-self: center;
-  background-image: url(badge_gold.webp);
+  /* background-image: url(badge_gold.webp); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
   width: 160px;
+ 
 }
 .dcR{
   grid-area:CB2 ;
+  height: 200px;
   width: 60%;
   justify-self: center;
   justify-self: center;
-  background-image: url(badge_gold.webp);
+  /* background-image: url(badge_gold.webp); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -239,10 +254,11 @@ gap: 10px;
 }
 .dd{
   grid-area:RB ;
+  height: 200px;
   width: 60%;
   justify-self: center;
   justify-self: center;
-  background-image: url(badge_gold.webp);
+  /* background-image: url(badge_gold.webp); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -250,10 +266,11 @@ gap: 10px;
 }
 .dg{
   grid-area:LB ;
+  height: 200px;
   width: 60%;
   justify-self: center;
   justify-self: center;
-  background-image: url(badge_gold.webp);
+  /* background-image: url(badge_gold.webp); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -261,10 +278,11 @@ gap: 10px;
 }
 .mdf{
   grid-area:CM1 ;
+  height: 200px;
   width: 60%;
   justify-self: center;
   justify-self: center;
-  background-image: url(badge_gold.webp);
+  /* background-image: url(badge_gold.webp); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -272,10 +290,11 @@ gap: 10px;
 }
 .mr{
   grid-area:CM2 ;
+  height: 200px;
   width: 60%;
   justify-self: center;
   justify-self: center;
-  background-image: url(badge_gold.webp);
+  /* background-image: url(badge_gold.webp); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -283,10 +302,11 @@ gap: 10px;
 }
 .mo{
   grid-area:CM3 ;
+  height: 200px;
   width: 60%;
   justify-self: center;
   justify-self: center;
-  background-image: url(badge_gold.webp);
+  /* background-image: url(badge_gold.webp); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -294,10 +314,11 @@ gap: 10px;
 }
 .aig{
   grid-area:RW ;
+  height: 200px;
   width: 60%;
   justify-self: center;
   justify-self: center;
-  background-image: url(badge_gold.webp);
+  /* background-image: url(badge_gold.webp); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -305,10 +326,11 @@ gap: 10px;
 }
 .aid{
   grid-area:ST ;
+  height: 200px;
   width: 60%;
   justify-self: center;
   justify-self: center;
-  background-image: url(badge_gold.webp);
+  /* background-image: url(badge_gold.webp); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -316,10 +338,11 @@ gap: 10px;
 }
 .ac{
   grid-area:LW ;
+  height: 200px;
   width: 60%;
   justify-self: center;
   justify-self: center;
-  background-image: url(badge_gold.webp);
+  /* background-image: url(badge_gold.webp); */
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -504,13 +527,6 @@ align-items: center;
   width: 40px;
 }
 
-.player-card {
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #f9f9f9;
-  border-radius: 5px;
-}
 .player-photo {
   width: 100px;
   height: 100px;
@@ -524,7 +540,7 @@ align-items: center;
 
 .card {
   grid-column: span 4 / span 4;
-  width: 90%;
+  width: 70%;
   background: #ffffff;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -555,6 +571,7 @@ align-items: center;
 .card-buttons {
   display: flex;
   justify-content: space-around;
+  gap: 10px;
 }
 
 .btn {
@@ -592,4 +609,160 @@ align-items: center;
 
 
 
+/* responsive design */
 
+
+@media (max-width: 768px) {
+  body {
+      font-size: 14px;
+  }
+ .container{
+  display: flex;
+  flex-direction: column;
+ }
+ .changement{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+ }
+ .image_terrain {
+  min-height: 800px;
+ }
+ .gardien_de_but {
+  grid-area: GK;
+ height: 200px;
+  justify-self: center;
+  justify-self: center;
+  /* background-image: url(badge_gold.webp); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 160px;
+
+ 
+
+}
+
+.dcG{
+  grid-area:CB1 ;
+  height: 100px;
+ 
+  justify-self: center;
+  justify-self: center;
+  /* background-image: url(badge_gold.webp); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+ 
+}
+.dcR{
+  grid-area:CB2 ;
+  height: 100px;
+
+  justify-self: center;
+  justify-self: center;
+  /* background-image: url(badge_gold.webp); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+
+}
+.dd{
+  grid-area:RB ;
+  height: 100px;
+  
+  justify-self: center;
+  justify-self: center;
+  /* background-image: url(badge_gold.webp); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+}
+.dg{
+  grid-area:LB ;
+  height: 100px;
+  
+  justify-self: center;
+  justify-self: center;
+  /* background-image: url(badge_gold.webp); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+}
+.mdf{
+  grid-area:CM1 ;
+  height: 100px;
+
+  justify-self: center;
+  justify-self: center;
+  /* background-image: url(badge_gold.webp); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+}
+.mr{
+  grid-area:CM2 ;
+  height: 100px;
+ 
+  justify-self: center;
+  justify-self: center;
+  /* background-image: url(badge_gold.webp); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+}
+.mo{
+  grid-area:CM3 ;
+  height: 100px;
+  
+  justify-self: center;
+  justify-self: center;
+  /* background-image: url(badge_gold.webp); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+}
+.aig{
+  grid-area:RW ;
+  height: 100px;
+
+  justify-self: center;
+  justify-self: center;
+  /* background-image: url(badge_gold.webp); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+}
+.aid{
+  grid-area:ST ;
+  height: 100px;
+ 
+  justify-self: center;
+  justify-self: center;
+  /* background-image: url(badge_gold.webp); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+}
+.ac{
+  grid-area:LW ;
+  height: 100px;
+  
+  justify-self: center;
+  justify-self: center;
+  /* background-image: url(badge_gold.webp); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+}
+
+}
