@@ -786,3 +786,9 @@ align-items: center;
 }
 
 }
+
+
+.form-group span{
+  color: red;
+  font-size: 14px;
+ }
