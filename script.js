@@ -50,14 +50,16 @@ function displayGardien(Gardien) {
                 <div class="raiting">
                  <p>${Gardien.rating_gardien }</p>
                  <p>++</p>
+                
                 </div>
                 <div id="profil" class="profil">
                   <img src="${Gardien.photo_gardien}">
+                 <p>GK</p>
                 </div>
                  </div>
                 <button class="delete-btn" style="all: unset"  ><i class="fas fa-trash"></i></button>
-                
-            <div class="name_joueur">
+                 <button  class="update-btn" style="all: unset"><i class="fas fa-edit"></i></i></button>
+                 <div class="name_joueur">
               <h4>${Gardien.name_gardien}</h4>
             </div>
             <div class="statistique">
@@ -89,7 +91,6 @@ function displayGardien(Gardien) {
             <div class="flags">
               <img src= ${Gardien.logo}>
               <img src=${Gardien.drapeau}>
-              
            </div>
            
     `;
@@ -108,6 +109,65 @@ function displayGardien(Gardien) {
             Swal.fire("Deleted!", "The player has been deleted.", "success");
         }
     });
+});
+
+gardienInfo.querySelector('.update-btn').addEventListener('click', function () {
+  const playerIndex = data.findIndex(p => p.name_gardien === Gardien.name_gardien);
+  if (playerIndex !== -1) {
+      
+      document.getElementById('name-gardien').value = data[playerIndex].name_gardien;
+      document.getElementById('photo_gardien').value = data[playerIndex].photo_gardien;
+      document.getElementById('position_gardien').value = data[playerIndex].position_gardien;
+      document.getElementById('nationality_gardien').value = data[playerIndex].nationality_gardien;
+      document.getElementById('club').value = data[playerIndex].club_gardien;
+      document.getElementById('rating_Gardien').value = data[playerIndex].rating_gardien;
+      document.getElementById('diving').value = data[playerIndex].diving;
+      document.getElementById('handling').value = data[playerIndex].handling;
+      document.getElementById('kicking').value = data[playerIndex].kicking;
+      document.getElementById('reflexes').value = data[playerIndex].reflexes;
+      document.getElementById('speed').value = data[playerIndex].speed;
+      document.getElementById('positioning').value = data[playerIndex].positioning;
+      document.getElementById("photo_drapeau").value = data[playerIndex].drapeau;
+      document.getElementById("photo_logo").value = data[playerIndex].logo;
+
+      // Changer le bouton pour sauvegarder
+      document.getElementById('saveChangesgk').style.display = "inline-block";
+
+      
+      document.getElementById('saveChangesgk').onclick = function (){
+          data[playerIndex].name_gardien = document.getElementById('name-gardien').value;
+          data[playerIndex].photo_gardien = document.getElementById('photo_gardien').value;
+          data[playerIndex].position_gardien = document.getElementById('position_gardien').value;
+          data[playerIndex].nationality_gardien = document.getElementById('nationality_gardien').value;
+          data[playerIndex].club_gardien = document.getElementById('club').value;
+          data[playerIndex].rating_gardien = document.getElementById('rating_Gardien').value;
+          data[playerIndex].diving = document.getElementById('diving').value;
+          data[playerIndex].handling = document.getElementById('handling').value;
+          data[playerIndex].kicking = document.getElementById('kicking').value;
+          data[playerIndex].reflexes = document.getElementById('reflexes').value;
+          data[playerIndex].speed = document.getElementById('speed').value;
+          data[playerIndex].positioning = document.getElementById('positioning').value;
+          data[playerIndex].drapeau = document.getElementById("photo_drapeau").value;
+          data[playerIndex].logo = document.getElementById("photo_logo").value;
+
+          // update l'affichage du gardien modifié
+          gardienInfo.querySelector('.raiting p').textContent = data[playerIndex].rating_gardien;
+          gardienInfo.querySelector('.profil img').src = data[playerIndex].photo_gardien;
+          gardienInfo.querySelector('.name_joueur h4').textContent = data[playerIndex].name_gardien;
+          gardienInfo.querySelector('.statistique .div p:last-child').textContent = data[playerIndex].diving;
+          gardienInfo.querySelector('.statistique .hand p:last-child').textContent = data[playerIndex].handling;
+          gardienInfo.querySelector('.statistique .kick p:last-child').textContent = data[playerIndex].kicking;
+          gardienInfo.querySelector('.statistique .reflexe p:last-child').textContent = data[playerIndex].reflexes;
+          gardienInfo.querySelector('.statistique .speed p:last-child').textContent = data[playerIndex].speed;
+          gardienInfo.querySelector('.statistique .positionnig p:last-child').textContent = data[playerIndex].positioning;
+          gardienInfo.querySelector('.flags img:first-child').src = data[playerIndex].logo;
+          gardienInfo.querySelector('.flags img:last-child').src = data[playerIndex].drapeau;
+
+         
+          document.getElementById('saveChanges').style.display = "none";
+          Swal.fire("Updated!", "The player has been updated.", "success");
+      };
+  }
 });
 
 
@@ -166,7 +226,8 @@ addplayer.addEventListener("click",()=>{
 
   const name = document.getElementById('name').value;
     const photo = document.getElementById('photo').value;
-    // const position = document.getElementById('position').value;
+     const position = document.getElementById('position').value;
+  
     const nationality = document.getElementById('nationality').value;
     const club = document.getElementById('club').value;
     const drapeauJoueur = document.getElementById('joueur_drapeau').value;
@@ -181,6 +242,7 @@ addplayer.addEventListener("click",()=>{
   const newPlayer={
     name, 
     photo,
+    position,
       nationality,
       drapeauJoueur,
       logoJoueur, 
@@ -202,22 +264,27 @@ if (validateForm()) {
  
 }
 
-});
+}
+);
 function displayPlayer(Player) {
   let selectOption=document.getElementById("position")
  const joeurs= document.createElement('div')
 joeurs.classList.add("stylle")
+joeurs.setAttribute("data-id", Player.name);
  joeurs.innerHTML = `
  <div class="info">
    <div class="raiting">
      <p>${Player.rating}</p>
      <p>++</p>
+
    </div>
    <div id="profil" class="profil">
      <img src="${Player.photo}">
+     <p>${Player.position}</p>
    </div>
   </div>
   <button  class="delete" style="all: unset"><i class="fas fa-trash"></i></button>
+  <button  class="update" style="all: unset"><i class="fas fa-edit"></i></i></button>
  <div class="name_joueur">
    <h4>${Player.name}</h4>
  </div>
@@ -250,6 +317,7 @@ joeurs.classList.add("stylle")
  <div class="flags">
    <img src=${Player.logoJoueur}>
    <img src=${Player.drapeauJoueur}>
+  
  
  </div>
 `;
@@ -272,6 +340,65 @@ joeurs.querySelector('.delete').addEventListener('click', function () {
 });
 });
 
+joeurs.querySelector('.update').addEventListener('click', function () {
+  const playerIndex = tab.findIndex(p => p.name === Player.name && p.position === Player.position);
+
+  if (playerIndex !== -1) {
+      
+      document.getElementById('name').value = tab[playerIndex].name;
+      document.getElementById('photo').value = tab[playerIndex].photo;
+      document.getElementById('position').value = tab[playerIndex].position;
+      document.getElementById('nationality').value = tab[playerIndex].nationality;
+      document.getElementById('club').value = tab[playerIndex].club;
+      document.getElementById('joueur_drapeau').value = tab[playerIndex].drapeauJoueur;
+      document.getElementById('joueur_logo').value = tab[playerIndex].logoJoueur;
+      document.getElementById('rating').value = tab[playerIndex].rating;
+      document.getElementById('pace').value = tab[playerIndex].pace;
+      document.getElementById('shooting').value = tab[playerIndex].shooting;
+      document.getElementById('passing').value = tab[playerIndex].passing;
+      document.getElementById('dribbling').value = tab[playerIndex].dribbling;
+      document.getElementById('defending').value = tab[playerIndex].defending;
+      document.getElementById('physical').value = tab[playerIndex].physical;
+     
+      // document.getElementById('addPlayerBtn').style.display = "none";
+        document.getElementById('saveChanges').style.display = "inline-block";
+      
+      const saveButton = document.getElementById('saveChanges'); 
+      saveButton.onclick = function () {
+          
+          tab[playerIndex].name = document.getElementById('name').value;
+          tab[playerIndex].photo = document.getElementById('photo').value;
+          tab[playerIndex].position = document.getElementById('position').value;
+          tab[playerIndex].nationality = document.getElementById('nationality').value;
+          tab[playerIndex].club = document.getElementById('club').value;
+          tab[playerIndex].drapeauJoueur = document.getElementById('joueur_drapeau').value;
+          tab[playerIndex].logoJoueur = document.getElementById('joueur_logo').value;
+          tab[playerIndex].rating = document.getElementById('rating').value;
+          tab[playerIndex].pace = document.getElementById('pace').value;
+          tab[playerIndex].shooting = document.getElementById('shooting').value;
+          tab[playerIndex].passing = document.getElementById('passing').value;
+          tab[playerIndex].dribbling = document.getElementById('dribbling').value;
+          tab[playerIndex].defending = document.getElementById('defending').value;
+          tab[playerIndex].physical = document.getElementById('physical').value;
+
+          // Update de laffichage 
+          joeurs.querySelector('.name_joueur h4').textContent = tab[playerIndex].name;
+          joeurs.querySelector('.profil img').src = tab[playerIndex].photo;
+          joeurs.querySelector('.raiting p:first-child').textContent = tab[playerIndex].rating;
+          joeurs.querySelector('.pac p:last-child').textContent = tab[playerIndex].pace;
+          joeurs.querySelector('.sho p:last-child').textContent = tab[playerIndex].shooting;
+          joeurs.querySelector('.pas p:last-child').textContent = tab[playerIndex].passing;
+          joeurs.querySelector('.dri p:last-child').textContent = tab[playerIndex].dribbling;
+          joeurs.querySelector('.def p:last-child').textContent = tab[playerIndex].defending;
+          joeurs.querySelector('.phy p:last-child').textContent = tab[playerIndex].physical;
+          joeurs.querySelector('.flags img:first-child').src = tab[playerIndex].logoJoueur;
+          joeurs.querySelector('.flags img:last-child').src = tab[playerIndex].drapeauJoueur;
+          Swal.fire("Updated!", "The player has been updated.", "success");
+          
+          document.getElementById('playerForm').reset();
+      };
+  }
+});
 
 if (selectOption.value === "CBR"){
   if(defenceDroit.children.length===0){
@@ -549,3 +676,7 @@ function resetFormStyles() {
     message.textContent = ""; 
   });
 }
+
+
+
+
