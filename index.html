@@ -14,6 +14,7 @@
   <body>
     <section class="container">
       <div class="image_terrain">
+       
         <div class="equipe" id="terrain">
           <div id="gardien" class="gardien_de_but">
          
@@ -55,6 +56,10 @@
 
       <div id="card" class="card">
         <h2 class="card-title">Gestion d'équipe</h2>
+        <select class="formation-selector">
+          <option value="4-3-3">4-3-3</option>
+          <option value="4-4-2">4-4-2</option>
+        </select>
         <p class="card-description">
           Ajoutez un gardien ou un joueur à votre équipe.
         </p>
@@ -84,7 +89,7 @@
           <div class="form-group">
             <label for="name">Nom</label>
             <input type="text" id="name-gardien" name="name" />
-            
+            <span id="nameGardien-error"></span>
           </div>
 
           <div class="form-group">
@@ -93,8 +98,8 @@
               type="url"
               id="photo_gardien"
               name="photo"
-              
-            />
+               />
+               <span id="photoGardien-error"></span>
           </div>
           <div class="form-group">
             <label for="position">Position</label>
@@ -105,15 +110,18 @@
               value="GK"
               disabled
             />
+            <span id="positionGardien-error"></span>
           </div>
           
           <div class="form-group">
             <label for="nationality">Nationalité</label>
             <input type="text" id="nationality_gardien" name="nationality" />
+            <span id="nationalityGardien_error"></span>
           </div>
           <div class="form-group">
             <label for="photo">drapeau</label>
             <input type="url" id="photo_drapeau" name="photo"  />
+            <span id="drapeauGardien-error"></span>
           </div>
           <!-- <div class="form-group">
                           <label for="club">Club</label>
@@ -122,39 +130,47 @@
           <div class="form-group">
             <label for="photo">logo</label>
             <input type="url" id="photo_logo" name="photo"  />
+            <span id="logoGardien-error"></span>
           </div>
           <div class="form-group">
             <label for="rating">rating</label>
             <input type="number" id="rating_Gardien" name="rating" />
+            <span id="ratinggardien-error"></span>
           </div>
           <div class="avis">
             <div class="form-group">
               <label for="diving">diving</label>
               <input type="number" id="diving" name="diving" />
+              <span id="divingGardien-error"></span>
             </div>
             <div class="form-group">
               <label for="handling">handling</label>
               <input type="number" id="handling" name="handling" />
+              <span id="handlingGardien-error"></span>
             </div>
           </div>
           <div class="avis">
             <div class="form-group">
               <label for="kicking">kicking</label>
               <input type="number" id="kicking" name="kicking" />
+              <span id="kickingGardien-error"></span>
             </div>
             <div class="form-group">
               <label for="reflexes">Réflexes</label>
               <input type="number" id="reflexes" name="reflexes" />
+              <span id="reflexeGardien-error"></span>
             </div>
           </div>
           <div class="avis">
             <div class="form-group">
               <label for="speed">speed</label>
               <input type="number" id="speed" name="speed" />
+              <span id="speedGardien-error"></span>
             </div>
             <div class="form-group">
               <label for="positioning">positioning</label>
               <input type="number" id="positioning" name="positioning" />
+              <span id="positioningGardien-error"></span>
             </div>
           </div>
           <div>
@@ -197,9 +213,9 @@
               <option value="CBL">CENTER BACK LEFT</option>
               <option value="LB">LEFT BACK</option>
               <option value="RB">REIGHT BACK</option>
-              <option value="CM1">Midfield</option>
-              <option value="CM2">MILIEU RELAYEUR</option>
-              <option value="CM3">MILIEU OFFENSIF</option>
+              <option value="MDF">Midfield</option>
+              <option value="MR">MILIEU RELAYEUR</option>
+              <option value="MO">MILIEU OFFENSIF</option>
               <option value="LW">LEFT WINGER</option>
               <option value="ST">Striker (ST)</option>
               <option value="RW">REIGHT WINGER</option>
@@ -346,26 +362,13 @@
         <h3>Les Remplacements</h3>
       </div>
       <div class="changement">
-       
+     
        </div>
     </div>
-    <!-- <div id="playersList">
-      <h3>Liste des joueurs</h3>
-      <div class="player-cards"></div>
-    </div> -->
+
 
     <script src="script.js"></script>
   </body>
 </html>
 
-<!-- <div class="dc_changement">
-        
-      </div>
-      <div class="dc_changement"></div>
-      <div class="dd_changement"></div>
-      <div class="mdf_changement"></div>
-      <div class="mo_changement"></div>
-      <div class="mr_changement"></div>
-      <div class="aid_changement"></div>
-      <div class="aig_changement"></div>
-      <div class="ac_changement"></div> -->
+

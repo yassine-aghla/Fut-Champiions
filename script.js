@@ -36,8 +36,12 @@ document.getElementById("addkepperBtn").addEventListener('click', function () {
       logo
   };
   data.push(newGardien);
-  document.getElementById('playerForm').reset();
+ if( validateGardienForm()){
+
   displayGardien(newGardien);
+  resetFormStyles();
+  document.getElementById('playerForm').reset();
+ }
 });
 
 function displayGardien(Gardien) {
@@ -264,13 +268,13 @@ if (validateForm()) {
  
 }
 
-}
+ }
 );
 function displayPlayer(Player) {
   let selectOption=document.getElementById("position")
  const joeurs= document.createElement('div')
 joeurs.classList.add("stylle")
-joeurs.setAttribute("data-id", Player.name);
+// joeurs.setAttribute("data-id", Player.name);
  joeurs.innerHTML = `
  <div class="info">
    <div class="raiting">
@@ -403,6 +407,7 @@ joeurs.querySelector('.update').addEventListener('click', function () {
 if (selectOption.value === "CBR"){
   if(defenceDroit.children.length===0){
   defenceDroit.appendChild(joeurs)
+  
   }
   else{
   changement.appendChild(joeurs)
@@ -436,14 +441,14 @@ else if
     changement.appendChild(joeurs)
   }
   }
-   else if (selectOption.value  === "CM1") {
+   else if (selectOption.value  === "MDF") {
     if(MilieuDeffensif.children.length===0){
     MilieuDeffensif.appendChild(joeurs)
     }else{
       changement.appendChild(joeurs)
     }
   }
-   else if (selectOption.value  === "CM2") {
+   else if (selectOption.value  === "MR") {
     if(MilieuRelayeur.children.length===0){
     MilieuRelayeur.appendChild(joeurs)
    }
@@ -451,7 +456,7 @@ else if
       changement.appendChild(joeurs)
     }
   } 
-  else if (selectOption.value  === "CM3") {
+  else if (selectOption.value  === "MO") {
     if(MilieuOffensif.children.length===0){
     MilieuOffensif.appendChild(joeurs)
     }else{
@@ -679,4 +684,193 @@ function resetFormStyles() {
 
 
 
+function validateGardienForm() {
+  let isValid = true; // Pour suivre l'état global de validation
 
+  // Récupérer les champs du formulaire
+  const name_gardien = document.getElementById('name-gardien').value;
+  const photo_gardien = document.getElementById('photo_gardien').value;
+  // const nationality_gardien = document.getElementById('nationality_gardien').value;
+  const rating_gardien = document.getElementById('rating_Gardien').value;
+  const diving = document.getElementById('diving').value;
+  const handling = document.getElementById('handling').value;
+  const kicking = document.getElementById('kicking').value;
+  const reflexes = document.getElementById('reflexes').value;
+  const speed = document.getElementById('speed').value;
+  const positioning = document.getElementById('positioning').value;
+  const photo_drapeau=document.getElementById("photo_drapeau").value;
+  const gardien_logo=document.getElementById("photo_logo").value;
+
+  // Expressions régulières
+  const nameRegex=/^[A-Za-z]*\s{1}[A-Za-z]*$/;
+  // const infoRegex = /^[a-zA-Z\s]{3,}$/; 
+  const urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/;
+  const numberRegex = /^[0-9]{1,3}$/; 
+
+  
+
+  // Validation du nom
+  if (!nameRegex.test(name_gardien)) {
+    document.getElementById('name-gardien').style.border="2px solid red "
+    document.getElementById("nameGardien-error").textContent = "Entre votre nom complet";
+    isValid = false;
+  }
+  else{
+     document.getElementById('name-gardien').style.border="2px solid green "
+  document.getElementById("nameGardien-error").innerHTML="<p style='color:seagreen' >valid</p>";
+ 
+  }
+  // Validation de l'URL de la photo
+  if (!urlRegex.test(photo_gardien)) {
+    document.getElementById('photo_gardien').style.border="2px solid red "
+    document.getElementById("photoGardien-error").textContent = "Veuillez fournir une URL valide pour la photo.";
+    isValid = false;
+  }
+  else{
+    document.getElementById('photo_gardien').style.border="2px solid green "
+    document.getElementById("photoGardien-error").innerHTML="<p style='color:seagreen'>valid</p>";
+   
+    }
+
+
+
+  // Validation de l'URL du drapeau
+  if (!urlRegex.test(photo_drapeau)) {
+    document.getElementById('photo_drapeau').style.border="2px solid red "
+    document.getElementById("drapeauGardien-error").textContent = "Veuillez fournir une URL valide pour le drapeau.";
+    isValid = false;
+  }
+  else{
+     document.getElementById('photo_drapeau').style.border="2px solid green "
+    document.getElementById("drapeauGardien-error").innerHTML="<p style='color:seagreen'>valid</p>";
+   
+    }
+
+  // Validation de l'URL du logo
+  if (!urlRegex.test(gardien_logo)) {
+    document.getElementById('photo_logo').style.border="2px solid red "
+    document.getElementById("logoGardien-error").textContent = "Veuillez fournir une URL valide pour le logo.";
+    isValid = false;
+  }
+  else{
+    document.getElementById('photo_logo').style.border="2px solid green "
+    document.getElementById("logoGardien-error").innerHTML="<p style='color:seagreen'>valid</p>";
+    
+    }
+  // Validation de les statistiques 
+  if (!numberRegex.test(rating_gardien) || rating_gardien <= 10 || rating_gardien >= 100) {
+    document.getElementById('rating_Gardien').style.border="2px solid red "
+    document.getElementById("ratingGardien-error").textContent = "La note doit être un nombre entre 10 et 100.";
+    isValid = false;
+   
+    
+  }
+  else{
+    document.getElementById('rating_Gardien').style.border="2px solid green "
+    document.getElementById("ratinggardien-error").innerHTML="<p style='color:seagreen'>valid</p>";
+    
+    }
+  if (!numberRegex.test(diving) || diving <= 10 || diving >= 100) {
+    document.getElementById('diving').style.border="2px solid red "
+    document.getElementById("divingGardien-error").textContent = "La note doit être un nombre entre 10 et 100.";
+    isValid = false;
+  }
+  else{
+     document.getElementById('diving').style.border="2px solid green "
+    document.getElementById("divingGardien-error").innerHTML="<p style='color:seagreen'>valid</p>";
+   
+    }
+  if (!numberRegex.test(handling) || handling <= 10 || handling >= 100) {
+    document.getElementById('handling').style.border="2px solid red "
+    document.getElementById("handlingGardien-error").textContent = "La note doit être un nombre entre 10 et 100.";
+    isValid = false;
+  }
+  else{
+    document.getElementById('handling').style.border="2px solid green "
+    document.getElementById("handlingGardien-error").innerHTML="<p style='color:seagreen'>valid</p>";
+   
+    }
+  if (!numberRegex.test(kicking) || kicking <= 10 || kicking>= 100) {
+    document.getElementById('kicking').style.border="2px solid red "
+    document.getElementById("kickingGardien-error").textContent = "La note doit être un nombre entre 10 et 100.";
+    isValid = false;
+  }
+  else{
+    document.getElementById('kicking').style.border="2px solid green "
+    document.getElementById("kickingGardien-error").innerHTML="<p style='color:seagreen'>valid</p>";
+   
+    }
+  if (!numberRegex.test(reflexes) || reflexes <= 10 || reflexes>= 100) {
+    document.getElementById('reflexes').style.border="2px solid red "
+    document.getElementById("reflexeGardien-error").textContent = "La note doit être un nombre entre 10 et 100.";
+    isValid = false;
+  }
+  else{
+    document.getElementById('reflexes').style.border="2px solid green "
+    document.getElementById("reflexeGardien-error").innerHTML="<p style='color:seagreen'>valid</p>";
+   
+    }
+  if (!numberRegex.test(speed) || speed  <= 10 || speed  >= 100) {
+    document.getElementById('speed').style.border="2px solid red "
+    document.getElementById("speedGardien-error").textContent = "La note doit être un nombre entre 10 et 100.";
+    isValid = false;
+  }
+  else{
+     document.getElementById('speed').style.border="2px solid green"
+    document.getElementById("speedGardien-error").innerHTML="<p style='color:seagreen'>valid</p>";
+   
+    }
+  if (!numberRegex.test(positioning) || positioning <= 10 || positioning >= 100) {
+    document.getElementById('positioning').style.border="2px solid red "
+    document.getElementById("positioningGardien-error").textContent = "La note doit être un nombre entre 10 et 100.";
+    isValid = false;
+  }
+  else{
+    document.getElementById('positioning').style.border="2px solid green "
+    document.getElementById("positioningGardien-error").innerHTML="<p style='color:seagreen'>valid</p>";
+   
+    }
+
+
+
+  return isValid; 
+
+
+}
+
+
+
+
+
+
+
+
+const terrain = document.querySelector(".equipe");
+const formationSelector = document.querySelector(".formation-selector");
+
+formationSelector.addEventListener("change", () => {
+  const formation = formationSelector.value;
+
+  switch (formation) {
+    case "4-3-3":
+      terrain.style.gridTemplateAreas = `
+        ". LW LW ST ST RW RW ."
+        ". CM1 CM1 CM2 CM2 CM3 CM3 ."
+        "LB LB CB1 CB1 CB2 CB2 RB RB"
+        ". . . GK GK . . ."
+      `;
+      break;
+
+    case "4-4-2":
+      terrain.style.gridTemplateAreas = `
+        ". . LW LW RW RW . ."
+        "CM1 CM1 ST ST CM2 CM2 CM3 CM3"
+        "LB LB CB1 CB1 CB2 CB2 RB RB"
+        ". . . GK GK . . ."
+      `;
+      break;
+
+    default:
+      break;
+  }
+});
