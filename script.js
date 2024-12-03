@@ -1,7 +1,6 @@
 let data=[];
 let gardien=document.getElementById("gardien")
-let profil=document.getElementById("profil")
-const changement= document.querySelector(".changement")
+let changement= document.querySelector(".changement")
 document.getElementById("addkepperBtn").addEventListener('click', function () {
     // Récupérer les données du formulaire
     const name_gardien = document.getElementById('name-gardien').value;
@@ -118,7 +117,7 @@ function displayGardien(Gardien) {
 gardienInfo.querySelector('.update-btn').addEventListener('click', function () {
   const playerIndex = data.findIndex(p => p.name_gardien === Gardien.name_gardien);
   if (playerIndex !== -1) {
-      
+      // remplissage de formulaire avec les ancienne information de player pour modifier
       document.getElementById('name-gardien').value = data[playerIndex].name_gardien;
       document.getElementById('photo_gardien').value = data[playerIndex].photo_gardien;
       document.getElementById('position_gardien').value = data[playerIndex].position_gardien;
@@ -137,7 +136,7 @@ gardienInfo.querySelector('.update-btn').addEventListener('click', function () {
       // Changer le bouton pour sauvegarder
       document.getElementById('saveChangesgk').style.display = "inline-block";
 
-      
+      // update les information dans le tableau tab
       document.getElementById('saveChangesgk').onclick = function (){
           data[playerIndex].name_gardien = document.getElementById('name-gardien').value;
           data[playerIndex].photo_gardien = document.getElementById('photo_gardien').value;
@@ -348,7 +347,7 @@ joeurs.querySelector('.update').addEventListener('click', function () {
   const playerIndex = tab.findIndex(p => p.name === Player.name && p.position === Player.position);
 
   if (playerIndex !== -1) {
-      
+      // remplissage de formulaire avec les ancienne information de player pour modifier
       document.getElementById('name').value = tab[playerIndex].name;
       document.getElementById('photo').value = tab[playerIndex].photo;
       document.getElementById('position').value = tab[playerIndex].position;
@@ -364,12 +363,12 @@ joeurs.querySelector('.update').addEventListener('click', function () {
       document.getElementById('defending').value = tab[playerIndex].defending;
       document.getElementById('physical').value = tab[playerIndex].physical;
      
-      // document.getElementById('addPlayerBtn').style.display = "none";
+      
         document.getElementById('saveChanges').style.display = "inline-block";
       
       const saveButton = document.getElementById('saveChanges'); 
       saveButton.onclick = function () {
-          
+          // update les information 
           tab[playerIndex].name = document.getElementById('name').value;
           tab[playerIndex].photo = document.getElementById('photo').value;
           tab[playerIndex].position = document.getElementById('position').value;
@@ -685,12 +684,11 @@ function resetFormStyles() {
 
 
 function validateGardienForm() {
-  let isValid = true; // Pour suivre l'état global de validation
+  let isValid = true; 
 
   // Récupérer les champs du formulaire
   const name_gardien = document.getElementById('name-gardien').value;
   const photo_gardien = document.getElementById('photo_gardien').value;
-  // const nationality_gardien = document.getElementById('nationality_gardien').value;
   const rating_gardien = document.getElementById('rating_Gardien').value;
   const diving = document.getElementById('diving').value;
   const handling = document.getElementById('handling').value;
@@ -703,8 +701,7 @@ function validateGardienForm() {
 
   // Expressions régulières
   const nameRegex=/^[A-Za-z]*\s{1}[A-Za-z]*$/;
-  // const infoRegex = /^[a-zA-Z\s]{3,}$/; 
-  const urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)*\/?$/;
+  const urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-]*)$/;
   const numberRegex = /^[0-9]{1,3}$/; 
 
   
