@@ -35,8 +35,7 @@ document.getElementById("addkepperBtn").addEventListener('click', function () {
       logo
   };
   data.push(newGardien);
- if( validateGardienForm()){
-
+  if( validateGardienForm()){
   displayGardien(newGardien);
   resetFormStyles();
   document.getElementById('playerForm').reset();
@@ -223,7 +222,7 @@ let avantCenter=document.getElementById("AC")
 
    
                                                                          
-    document.getElementById('playerForm').reset();
+  document.getElementById('playerForm').reset();
 const addplayer= document.getElementById('addPlayerBtn');
 addplayer.addEventListener("click",()=>{
 
@@ -259,7 +258,9 @@ addplayer.addEventListener("click",()=>{
        physical
    };
 tab.push(newPlayer);
+
 if (validateForm()) {
+  
   displayPlayer(newPlayer);
   resetFormStyles();
   // Si le formulaire est valide, ajouter le joueur
@@ -273,7 +274,6 @@ function displayPlayer(Player) {
   let selectOption=document.getElementById("position")
  const joeurs= document.createElement('div')
 joeurs.classList.add("stylle")
-// joeurs.setAttribute("data-id", Player.name);
  joeurs.innerHTML = `
  <div class="info">
    <div class="raiting">
@@ -871,3 +871,40 @@ formationSelector.addEventListener("change", () => {
       break;
   }
 });
+
+
+
+
+
+
+
+const player1 = {
+  name: "Mbappe",
+  club: "PSG",
+  league: "Ligue 1",
+  nationality: "France"
+  };
+  
+  const player2 = {
+  name: "Dembele",
+  club: "PSG",
+  league: "Ligue 1",
+  nationality: "France"
+  };
+  function calculateChemistry(player1, player2) {
+    let count=0;
+    if(player1.club==player2.club){
+      count++;
+    }
+    if(player1.league==player2.league){
+      count=count+2;
+  }
+  if(player1.nationality==player2.nationality){
+    count=count+3;
+  }
+  return count;
+  }
+
+  let counter=document.getElementById("count")
+ counter.textContent=calculateChemistry(player1, player2);
+

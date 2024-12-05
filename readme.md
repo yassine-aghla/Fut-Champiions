@@ -28,11 +28,7 @@ Cette application permet de créer, gérer et optimiser une équipe de football.
 
 ---
 
-### 3. **Sauvegarde et Récupération des Données**
-- Les données de formation et d'équipe sont **stockées localement** .
-- Récupération automatique des données au chargement de l'application pour éviter toute perte.
 
----
 
 ### 4. **Formulaire Dynamique pour les Joueurs**
 - Création dynamique de nouveaux joueurs via une interface utilisateur intuitive.
@@ -44,9 +40,9 @@ Cette application permet de créer, gérer et optimiser une équipe de football.
 
 ## Technologies Utilisées
 - **HTML5** : Structure de l'application.
-- **CSS3 (ou Tailwind CSS)** : Design et style des composants.
+- **CSS3 ** : Design et style des composants.
 - **JavaScript** : Logique dynamique et interactions.
-- **LocalStorage** : Sauvegarde locale des données.
+
 
 ---
 

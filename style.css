@@ -734,7 +734,7 @@ transform: translateX(10px);
   background-repeat: no-repeat;
   background-position: center;
   width: 100px;
-  transform: translate(20px,60px);
+  transform: translate(20px,80px);
 }
 .mo{
   grid-area:CM3 ;
@@ -773,12 +773,11 @@ transform: translateX(10px);
   background-repeat: no-repeat;
   background-position: center;
   width: 100px;
-  transform: translate(20px,150px);
+  transform: translate(20px,130px);
 }
 .ac{
   grid-area:LW ;
   height: 100px;
-  
   justify-self: center;
   justify-self: center;
   /* background-image: url(badge_gold.webp); */

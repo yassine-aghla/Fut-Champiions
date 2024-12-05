@@ -4,9 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="style.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-   
 
     <title>Player Form</title>
   </head>
@@ -14,48 +16,23 @@
   <body>
     <section class="container">
       <div class="image_terrain">
-       
         <div class="equipe" id="terrain">
-          <div id="gardien" class="gardien_de_but">
-         
-          </div>
-          <div id="DCG" class="dcG">
-           
-          </div>
-          <div id="DCR" class="dcR">
-           
-          </div>
-          <div id="DD" class="dd">
-          
-          
-          
-          </div>
-          <div id="DG" class="dg">
-            
-          </div>
-          <div id="MDF" class="mdf">
-           
-          </div>
-          <div id="MR" class="mr">
-           
-          </div>
-          <div id="MO" class="mo">
-            
-          </div>
-          <div id="AIG" class="aig">
-           
-          </div>
-          <div id="AID" class="aid">
-           
-          </div>
-          <div id="AC" class="ac">
-           
-          </div>
+          <div id="gardien" class="gardien_de_but player__card "></div>
+          <div id="DCG" class="dcG player__card"></div>
+          <div id="DCR" class="dcR player__card"></div>
+          <div id="DD" class="dd player__card"></div>
+          <div id="DG" class="dg player__card"></div>
+          <div id="MDF" class="mdf player__card"></div>
+          <div id="MR" class="mr player__card"></div>
+          <div id="MO" class="mo player__card"></div>
+          <div id="AIG" class="aig player__card"></div>
+          <div id="AID" class="aid player__card"></div>
+          <div id="AC" class="ac player__card"></div>
         </div>
       </div>
-
       <div id="card" class="card">
-        <h2 class="card-title">Gestion d'équipe</h2>
+    
+ <h2 class="card-title">Gestion d'équipe</h2>
         <select class="formation-selector">
           <option value="4-3-3">4-3-3</option>
           <option value="4-4-2">4-4-2</option>
@@ -94,12 +71,8 @@
 
           <div class="form-group">
             <label for="photo">Photo</label>
-            <input
-              type="url"
-              id="photo_gardien"
-              name="photo"
-               />
-               <span id="photoGardien-error"></span>
+            <input type="url" id="photo_gardien" name="photo" />
+            <span id="photoGardien-error"></span>
           </div>
           <div class="form-group">
             <label for="position">Position</label>
@@ -112,7 +85,7 @@
             />
             <span id="positionGardien-error"></span>
           </div>
-          
+
           <div class="form-group">
             <label for="nationality">Nationalité</label>
             <input type="text" id="nationality_gardien" name="nationality" />
@@ -120,7 +93,7 @@
           </div>
           <div class="form-group">
             <label for="photo">drapeau</label>
-            <input type="url" id="photo_drapeau" name="photo"  />
+            <input type="url" id="photo_drapeau" name="photo" />
             <span id="drapeauGardien-error"></span>
           </div>
           <!-- <div class="form-group">
@@ -129,7 +102,7 @@
                       </div> -->
           <div class="form-group">
             <label for="photo">logo</label>
-            <input type="url" id="photo_logo" name="photo"  />
+            <input type="url" id="photo_logo" name="photo" />
             <span id="logoGardien-error"></span>
           </div>
           <div class="form-group">
@@ -180,17 +153,23 @@
             <button type="button" onclick="ajouterJouer()" class="btn-submit">
               ajouter joueur
             </button>
-            <button type="button" id="saveChangesgk" class="btn-submit" style="display: none;">Save Changes gardien</button>
-          
+            <button
+              type="button"
+              id="saveChangesgk"
+              class="btn-submit"
+              style="display: none"
+            >
+              Save Changes gardien
+            </button>
           </div>
         </form>
       </div>
 
       <div class="form-container">
         <h2>Player Form</h2>
-        <form id="formulaire_joueur" >
-          <input type="hidden" id="joueur-id" value="" >
-          <div  class="form-group">
+        <form id="formulaire_joueur">
+         
+          <div class="form-group">
             <label for="name">Name</label>
             <input
               type="text"
@@ -203,7 +182,7 @@
           </div>
           <div class="form-group">
             <label for="photo">Photo</label>
-            <input type="url" id="photo" name="photo"  />
+            <input type="url" id="photo" name="photo" />
             <span id="photo-error"></span>
           </div>
           <div class="form-group">
@@ -229,18 +208,18 @@
               name="nationality"
               placeholder="Enter nationality"
             />
-            <span id="natoinality-error" ></span>
+            <span id="natoinality-error"></span>
           </div>
           <div class="form-group">
             <label for="photo">drapeau</label>
-            <input type="url" id="joueur_drapeau" name="photo"  />
-            <span id="joueur_drapeau-error" ></span>
+            <input type="url" id="joueur_drapeau" name="photo" />
+            <span id="joueur_drapeau-error"></span>
           </div>
-        
+
           <div class="form-group">
             <label for="photo">logo</label>
-            <input type="url" id="joueur_logo" name="photo"  />
-            <span id="joueur_logo-error" ></span>
+            <input type="url" id="joueur_logo" name="photo" />
+            <span id="joueur_logo-error"></span>
           </div>
           <div class="form-group">
             <label for="club">Club</label>
@@ -250,7 +229,7 @@
               name="club"
               placeholder="Enter club name"
             />
-            <span id="club-error" ></span>
+            <span id="club-error"></span>
           </div>
 
           <div class="form-group">
@@ -263,7 +242,7 @@
               min="0"
               max="100"
             />
-            <span id="rating-error" ></span>
+            <span id="rating-error"></span>
           </div>
 
           <div class="avis">
@@ -277,7 +256,7 @@
                 min="0"
                 max="100"
               />
-              <span id="pace-error" ></span>
+              <span id="pace-error"></span>
             </div>
             <div class="form-group">
               <label for="shooting">Shooting</label>
@@ -289,7 +268,7 @@
                 min="0"
                 max="100"
               />
-              <span id="shooting-error" ></span>
+              <span id="shooting-error"></span>
             </div>
           </div>
           <div class="avis">
@@ -303,7 +282,7 @@
                 min="0"
                 max="100"
               />
-              <span id="passing-error" ></span>
+              <span id="passing-error"></span>
             </div>
             <div class="form-group">
               <label for="dribbling">Dribbling</label>
@@ -315,7 +294,7 @@
                 min="0"
                 max="100"
               />
-              <span id="dribbling-error" ></span>
+              <span id="dribbling-error"></span>
             </div>
           </div>
           <div class="avis">
@@ -329,7 +308,7 @@
                 min="0"
                 max="100"
               />
-              <span id="defending-error" ></span>
+              <span id="defending-error"></span>
             </div>
             <div class="form-group">
               <label for="physical">Physical</label>
@@ -341,7 +320,7 @@
                 min="0"
                 max="100"
               /><br />
-              <span id="physical-error" ></span>
+              <span id="physical-error"></span>
             </div>
           </div>
           <div>
@@ -351,24 +330,26 @@
             <button type="button" onclick="ajouterGardien()" class="btn-submit">
               ajouter gardien
             </button>
-            <button type="button" id="saveChanges" class="btn-submit" style="display: none;">Save Changes</button>
+            <button
+              type="button"
+              id="saveChanges"
+              class="btn-submit"
+              style="display: none"
+            >
+              Save Changes
+            </button>
           </div>
         </form>
       </div>
     </section>
-
-    <div class="substitutions">
+    <p id="count"></p>
+  <div class="substitutions">
       <div class="subs">
         <h3>Les Remplacements</h3>
       </div>
-      <div class="changement">
-     
-       </div>
+      <div class="changement"></div>
     </div>
-
 
     <script src="script.js"></script>
   </body>
 </html>
-
-
